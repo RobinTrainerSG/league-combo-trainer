@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>League Combo Trainer - Reviews</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌟 Combo Trainer Feedback 🌟</h1>
+
+    <div id="thankYouMessage" style="display:none;">
+      <h2>🌟 Thank you, Summoner! 🌟</h2>
+      <p>Your feedback strengthens the Temple!</p>
+      <a href="index.html"><button>Return to Home</button></a>
+    </div>
+
+    <form id="feedbackForm">
+      <input type="text" id="ign" placeholder="Enter your IGN" required><br><br>
+      <input type="text" id="server" placeholder="Enter your Server (e.g., SG, NA)" required><br><br>
+      <textarea id="comment" placeholder="Enter your Feedback" rows="4" cols="50" required></textarea><br><br>
+
+      <label><input type="radio" name="reaction" value="like" required> 👍 Like</label>
+      <label><input type="radio" name="reaction" value="dislike" required> 👎 Dislike</label><br><br>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    <div class="stats" style="margin-top:20px;">
+      <h3>Total Likes: <span id="likeCounter">0</span> 👍 | Total Dislikes: <span id="dislikeCounter">0</span> 👎</h3>
+    </div>
+
+    <div id="reviewsList" style="margin-top:30px;">
+      <!-- Reviews appear here -->
+    </div>
+
+    <br><br>
+    <a href="index.html"><button>Return to Home</button></a>
+  </div>
+
+  <script src="script-reviews.js"></script>
+</body>
+</html>

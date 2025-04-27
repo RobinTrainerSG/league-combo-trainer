@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>League Combo Trainer</title>
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
+  <!-- Chart.js for Speed Graph -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Confetti.js for celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+
+<hr class="gold-divider">
+
+
+<body>
+
+  <div class="top-overlay"></div>
+
+  <!-- Countdown Screen -->
+  <div id="countdown"></div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h1 id="mainTitle" class="shimmer-text">League Combo Trainer</h1>
+<p class="slogan-line">Sharpen Your Instincts, Master Your Combos.</p>
+
+    <div class="combo">
+      <input type="text" id="customCombo" placeholder="Enter your combo (e.g., Q W E R 1 D)" style="width:40%; padding:10px; font-size:18px; border-radius:8px;">
+      <br><br>
+
+      <!-- Preset Combos Section -->
+      <div style="margin-top: 20px;">
+        <select id="presetCombos" style="padding:10px; font-size:16px; border-radius:8px;">
+          <option value="">Select a Champion Combo</option>
+        </select>
+
+        <select id="flashKey" style="padding:10px; font-size:16px; border-radius:8px; margin-left:10px;">
+          <option value="D">Flash: D</option>
+          <option value="F">Flash: F</option>
+        </select>
+
+        <select id="igniteKey" style="padding:10px; font-size:16px; border-radius:8px; margin-left:10px;">
+          <option value="F">Ignite: F</option>
+          <option value="D">Ignite: D</option>
+        </select>
+
+        <br><br>
+        <button onclick="loadPresetCombo()">Load Selected Combo</button>
+        <button onclick="resetPresetSelection()">Reset Selections</button>
+      </div>
+
+      <br><br>
+
+      <button onclick="startCountdown()">Start Training</button>
+      <button onclick="resetTraining()">Reset Training</button>
+    </div>
+
+    <div class="input" id="comboDisplayArea" style="display:none;">
+      Combo to Perform: <span id="comboDisplay"></span>
+    </div>
+
+    <div class="input" id="attemptCounter" style="display:none;">
+      Attempt <span id="attemptNumber">1</span> of <span id="totalAttempts">10</span> | ⏱️ <span id="liveTimer">0s</span>
+    </div>
+
+    <div class="input" id="userInputArea" style="display:none;">
+      Your Input: <span id="userInput"></span>
+    </div>
+
+    <div class="stats" id="statsArea" style="display:none;">
+      Accuracy: <span id="accuracy">0%</span> | Time Taken: <span id="timeTaken">0s</span>
+    </div>
+
+    <div id="comboMultiplier">COMBO x2!</div>
+
+    <div class="stats" id="finalResult" style="display:none;">
+      <h2>Training Complete!</h2>
+      <table style="margin: 0 auto; text-align: center; border-collapse: collapse; width: 50%;">
+        <thead>
+          <tr style="background-color: #00C8FF; color: black;">
+            <th>Metric</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody style="background-color: rgba(255, 255, 255, 0.1);">
+          <tr>
+            <td>Average Accuracy</td>
+            <td><span id="finalAccuracy"></span>%</td>
+          </tr>
+          <tr>
+            <td>Fastest Combo Time</td>
+            <td><span id="fastestTime"></span> seconds</td>
+          </tr>
+          <tr>
+            <td>Best Combo Streak</td>
+            <td><span id="bestStreak"></span></td>
+          </tr>
+          <tr>
+            <td>Precision Score</td>
+            <td><span id="precisionScore"></span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="position: relative; width: 80%; height: 300px; margin: 30px auto;">
+        <canvas id="speedChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visit Counter -->
+  <div class="visitCounter">
+    Visits: <span id="visitCount">Loading...</span>
+  </div>
+
+  <div class="footer">
+    Created by Robin | Server: SG
+  </div>
+  
+  <a href="reviews.html" style="color:#C89B3C; font-family:'Cinzel Decorative', serif;">⭐ See Reviews ⭐</a>
+
+  <div id="randomQuoteArea" class="scroll-shimmer">
+    <!-- Random quote will appear here -->
+  </div>      
+
+  <div style="text-align: center; margin-top: 100px; position: fixed; bottom: 30px; width: 100%; z-index: 100;">
+    <a href="reviews.html" style="text-decoration: none;">
+      <button class="pulse-button" style="background-color: #111; color: #C89B3C; border: 2px solid #C89B3C; border-radius: 12px; padding: 14px 28px; font-family: 'Cinzel Decorative', serif; font-size: 20px; cursor: pointer;">
+        ✨ Leave a Review ✨
+      </button>
+    </a>
+  </div>  
+ 
+  <div class="footer">
+    Created by Robin | Server: SG
+  </div>
+
+  <!-- Link to JS -->
+  <script src="script.js"></script>  
+
+  <div class="bottom-overlay"></div>
+
+</body>
+</html>
