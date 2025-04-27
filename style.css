@@ -3,15 +3,11 @@
 
 /* Body Styling */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Cinzel Decorative', serif;
-  background: url('background.jpg') no-repeat center center fixed;
+  background-image: url('background.jpg');
   background-size: cover;
-  position: relative;
-  height: 100vh;
-  overflow-x: hidden;
-  color: #C89B3C;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Dark overlay */
