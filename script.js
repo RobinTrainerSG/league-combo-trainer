@@ -147,11 +147,11 @@ function startTraining() {
   
     document.getElementById("comboDisplay").innerHTML = customCombo.map(k => {
         if (k === "FLASH") {
-          return `<img src="flash.png" alt="Flash" class="spell-icon">`;
+          return `<img src= "flash.png" alt="Flash" class="spell-icon">`;
         } else if (k === "IGNITE") {
-          return `<img src="ignite.png" alt="Ignite" class="spell-icon">`;
+          return `<img src= "ignite.png" alt="Ignite" class="spell-icon">`;
         } else if (k === "AA") {
-          return `<img src="sword.png" alt="Auto Attack" class="spell-icon">`;
+          return `<img src= "sword.png" alt="Auto Attack" class="spell-icon">`;
         } else {
           return `<span class="key">${k}</span>`;
         }
